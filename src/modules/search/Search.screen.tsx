@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import HomeLayout from './Home.layout'
+import React, { useEffect } from 'react'
+import SearchLayout from './Search.layout'
 import { useDispatch, useSelector } from 'react-redux';
 import { getDataBeers, getBeerDetails } from '../../reducers/actions'
 
 const Home = ({ navigation }) => {
-    const [isVisible, setVisible] = useState(false)
     const dispatch = useDispatch();
     const { Beers, BeersBanners, BeerBetter, load } = useSelector((state: any) => state)
     useEffect(() => {
@@ -19,15 +18,13 @@ const Home = ({ navigation }) => {
         navigation.navigate('Cart')
     }
     return (
-        <HomeLayout
+        <SearchLayout
             load={load}
             BeersBanners={BeersBanners}
             Beers={Beers}
             BeerBetter={BeerBetter}
             handlerNext={handlerNext}
             handlerGoCart={handlerGoCart}
-            setVisible={setVisible}
-            isVisible={isVisible}
         />
     )
 }

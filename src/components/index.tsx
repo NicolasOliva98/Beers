@@ -5,6 +5,8 @@ export { default as Tittle} from './Tittle';
 export { default as Header} from './Header';
 export { default as Card} from './Card';
 export { default as Loader} from './Loader';
+export { default as ModalInputSeach} from './ModalInputSeach';
+
 
 
 

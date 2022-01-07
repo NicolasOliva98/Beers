@@ -1,17 +1,26 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
-import { Icon } from "react-native-magnus";
+import { Icon, Text, Div } from "react-native-magnus";
+import { useSelector } from 'react-redux';
 
-interface Props {
-    icon:string
-}
-
-const Button = ({icon}: Props) => {
+const Button = ({ icon, onPressLeft,onPressRight }) => {
+    const { cantidad } = useSelector((state: any) => state);
     return (
-        <>
-            <TouchableOpacity style={styles.button}>
-                <Icon fontSize={18} name={icon} color="white" fontFamily='Ionicons' />
-            </TouchableOpacity>
+        <>{
+            icon == 'cart-outline' ?
+
+                <TouchableOpacity style={styles.button} onPress={onPressRight}>
+                    <Div bg='light' rounded='circle' h={15} w={15} position='absolute' top={0} right={2} justifyContent='center' alignItems='center'>
+                        <Text fontSize={9} textAlign='center'>{cantidad}</Text>
+                    </Div>
+                    <Icon fontSize={18} name={icon} color="white" fontFamily='Ionicons' />
+                </TouchableOpacity> :
+
+                <TouchableOpacity style={styles.button} onPress={onPressLeft}>
+                    <Icon fontSize={18} name={icon} color="white" fontFamily='Ionicons' />
+                </TouchableOpacity>
+        }
+
         </>
 
     )

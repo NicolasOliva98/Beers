@@ -1,11 +1,8 @@
 import React from 'react'
 import { Div as View, Text, Image } from 'react-native-magnus';
 import { W } from '../utils/Dimensions'
-interface Props {
-    BeerBetter: {}
-}
 
-const Card = ({ BeerBetter }: Props) => {
+const Card = ({ BeerBetter }) => {
     return (
         <View
             rounded='xl'
@@ -17,7 +14,7 @@ const Card = ({ BeerBetter }: Props) => {
         >
             <View row>
                 <View flex={0.3}>
-                    <Image 
+                    <Image
                         style={{ transform: [{ rotate: '15deg' }] }}
                         position='absolute'
                         top={-30}

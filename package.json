@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "ios2": "sh scripts/init.sh",
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 11'",
     "start": "react-native start",
@@ -10,6 +11,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
     "axios": "^0.24.0",
     "color": "^4.1.0",
     "deepmerge": "^4.2.2",
@@ -20,6 +23,8 @@
     "react-native-magnus": "^1.0.62",
     "react-native-modal": "^13.0.0",
     "react-native-ratings": "^8.1.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.10.1",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-super-grid": "^4.2.0",
     "react-native-vector-icons": "^9.0.0",
